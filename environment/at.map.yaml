@@ -4,6 +4,7 @@ flavor:
   small: 2
   medium: 2
   large: 3
+  xlarge: 4
 networks:
   default:
     - 707e1858-4aff-456f-8a1f-3c8f6e00dd12

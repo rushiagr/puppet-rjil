@@ -38,11 +38,11 @@ resources:
     networks: default
   cp:
     number: 2
-    flavor: medium
+    flavor: xlarge
     image: trusty
     networks: default
   gcp:
     number: 1
-    flavor: medium
+    flavor: xlarge
     image: trusty
     networks: default
