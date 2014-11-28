@@ -188,7 +188,7 @@ Consul works as follows:
 
   * The following Puppet Defined resource `rjil::jiocloud::consul::service` is used to define a service in consul.
   * Each service registers its ip address as an A record for the address: `<service_name>.service.consul`
-  * Each service registers its hostname: <hostmame>.node.consul and registers that as a SRV record for `<service_name>.service.consul`
+  * Each service registers its hostname: `<hostname>.node.consul` and registers that as a SRV record for `<service_name>.service.consul`
 
 #### using DNS
 
@@ -265,7 +265,7 @@ It is worth noting that two of these roles will need to reapply configuration wh
 * stmonleader needs to have all it's mons registered as well as an OSD number that matches num replicas.
 
 3. Once stmon.service.consul is registered in consul, stmon, ocdb, and oc can start compiling. These machines have
-   not performed any configuration at all at this point. At the same time, stmonleader might be adding it's ods (which
+   not performed any configuration at all at this point. At the same time, stmonleader might be adding it's osd (which
    takes two runs)
 
 4. oc will start compiling, but it blocks until the database is resolvable, once that is resolvable, it continues. At the same
@@ -381,6 +381,7 @@ First, you need to make sure that your Puppet module dependencies are
 installed:
 
 NOTE: make sure that you install librarian-puppet-simple and *not* librian-puppet!!!!
+NOTE: If you are behind a firewall which doesn't allow git protocol, do `export git_protocol=https` in the current shell.
 
 ````
 gem install librarian-puppet-simple
