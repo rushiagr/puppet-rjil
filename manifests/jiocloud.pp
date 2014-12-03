@@ -23,7 +23,7 @@ class rjil::jiocloud (
     $addr = "${::consul_discovery_token}.service.consuldiscovery.linux2go.dk"
     dns_blocker {  $addr:
       try_sleep     => 5,
-      tries         => 100,
+      tries         => 10,
       before    => Class["rjil::jiocloud::consul::${consul_role}"]
     }
   }
