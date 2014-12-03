@@ -554,7 +554,7 @@ ntp::servers:
 ntp::udlc: yes
 
 upstream_ntp_servers:
-  - pool.ntp.org
+  - 10.135.121.138
 
 ssh::server::storeconfigs_enabled: false
 
