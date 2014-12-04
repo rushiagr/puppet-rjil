@@ -19,3 +19,11 @@ rjil::jiocloud::consul::service::interval: 120s
 rjil::neutron::public_cidr: 100.1.0.0/24
 rjil::system::accounts::active_users: [soren,bodepd,hkumar,jenkins,consul,pandeyop]
 rjil::system::accounts::sudo_users: [soren,bodepd,hkumar,jenkins, consul, pandeyop]
+
+rjil::system::proxies:
+    "no":
+        url: "127.0.0.1,localhost,consul,jiocloud.com"
+    "http":
+        url: "10.135.121.138:3128"
+    "https":
+        url: "10.135.121.138:3128"
