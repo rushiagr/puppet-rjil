@@ -64,10 +64,10 @@ Vagrant.configure("2") do |config|
         "echo env=#{environment} > /etc/facter/facts.d/env.txt"
 
       if ENV['http_proxy']
-        config.vm.provision :shell, :inline => "echo 'export http_proxy=#{ENV['http_proxy']}'  > /etc/profile.d/proxy.sh"
-        if ENV['https_proxy']
-          config.vm.provision :shell, :inline => "echo 'export https_proxy=#{ENV['https_proxy']}' >> /etc/profile.d/proxy.sh"
-        end
+        #config.vm.provision :shell, :inline => "echo 'export http_proxy=#{ENV['http_proxy']}'  > /etc/profile.d/proxy.sh"
+        #if ENV['https_proxy']
+        #  config.vm.provision :shell, :inline => "echo 'export https_proxy=#{ENV['https_proxy']}' >> /etc/profile.d/proxy.sh"
+        #end
         config.vm.provision 'shell', :inline =>
         "echo \"Acquire::http { Proxy \\\"#{ENV['http_proxy']}\\\" }\" > /etc/apt/apt.conf.d/03proxy"
       end
